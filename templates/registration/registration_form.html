@@ -1,0 +1,50 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Login |{%endblock%} 
+
+{% block page_content %}
+
+<h2>Sign Up!</h2><br>
+
+<form action="." method="post">
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper" style="float:left; margin-right:10px;">
+        {{ form.first_name.errors }}
+        <label for="id_first_name">First name:</label>
+        {{ form.first_name }}
+    </div>
+
+    <div class="fieldWrapper" style="float:left;">
+        {{ form.last_name.errors }}
+        <label for="id_last_name">Last name:</label>
+        {{ form.last_name }}
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="id_username">*Username:</label>
+        {{ form.username }}
+    </div>
+    <div class="fieldWrapper" style="float:left; margin-right:10px;">
+        {{ form.password1.errors }}
+        <label for="id_password1">Password:</label>
+        {{ form.password1 }}
+    </div>
+    <div class="fieldWrapper" style="float:left;">
+        {{ form.password2.errors }}
+        <label for="id_password2">Password (Repeat):</label>
+        {{ form.password2 }}
+    </div>
+
+		{{ form.email.errors }}
+    <div style="visibility:hidden;">{{ form.email }}</div>
+
+    <div class="clearfix"></div>
+    
+	{% csrf_token %}
+	<br><input type="Submit" value="Submit" class='btn btn-primary'/>
+</form>
+
+{% endblock page_content %}

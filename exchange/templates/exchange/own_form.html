@@ -1,0 +1,15 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Library |{%endblock%} 
+{% block page_content %}
+
+<h2>New listing:</h2>
+<form action="." method="POST">
+	{{ form.as_p }}
+	{% csrf_token %}
+	<input type="Submit" value="Submit" class='btn btn-primary'/>
+</form>
+
+<a href="{% url 'exchange:textbook_create' %}">Don't see your textbook listed?</a>
+
+{%endblock page_content%}

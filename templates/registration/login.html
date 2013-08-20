@@ -1,0 +1,14 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Login |{%endblock%} 
+
+{% block page_content %}
+
+<form action="." method="POST">
+	{{ form.as_p }}
+	{% csrf_token %}
+	<input name="next" value="{%url 'exchange:library'%}" type="hidden">
+	<input type="Submit" value="Submit" class='btn btn-primary'/>
+</form>
+
+{% endblock page_content %}

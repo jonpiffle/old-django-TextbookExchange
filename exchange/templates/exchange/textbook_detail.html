@@ -1,0 +1,11 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Library |{%endblock%} 
+{% block page_content %}
+
+{{ object }}
+
+<br><br><a href="{% url 'exchange:textbook_list' %}">Back to Textbooks</a> | 
+<a href="{% url 'exchange:library' %}">Back to Library</a>
+
+{%endblock page_content%}

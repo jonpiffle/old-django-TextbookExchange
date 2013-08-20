@@ -1,0 +1,17 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Textbooks |{%endblock%} 
+
+{% block page_content %}
+
+<h2>Textbooks: </h2>
+<ul>
+{% for textbook in textbook_list%}
+	<li><a href="{{ textbook.get_absolute_url }}">{{ textbook }}</a></li>
+{% empty %}
+	<li>None found!</li>		
+{% endfor %}
+</ul>
+
+{% endblock page_content %}
+	

@@ -1,0 +1,10 @@
+<form action="." method="POST">
+	{{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.subject.errors }}
+        {{ form.content }}
+    </div>
+    <div class="clearfix"></div>
+	{% csrf_token %}
+	<div style="text-align:right;"><input type="Submit" value="Submit" class="btn btn-primary"/></div>
+</form>

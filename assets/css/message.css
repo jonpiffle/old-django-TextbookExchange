@@ -1,0 +1,116 @@
+.block {
+  text-align: center;
+}
+
+.badge-notification{
+  background: #2a333c;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can
+   also be of any width and height */ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+}
+table tr td a {
+    display:block;
+    height:100%;
+    width:100%;
+}
+
+.received 
+{
+margin-top: 15px;
+text-align: left;
+position: relative;
+width: 90%;
+float:left;
+padding: 10px;
+background-color: #45515f;
+border: #262727 solid 1px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.received:after 
+{
+content: "";
+position: absolute;
+top: 10%;
+left: -7px;
+border-style: solid;
+border-width: 8px 7px 8px 0;
+border-color: transparent #45515f;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.received:before 
+{
+content: "";
+position: absolute;
+top: 10%;
+left: -8px;
+border-style: solid;
+border-width: 8px 7px 8px 0;
+border-color: transparent #262727;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+.sent
+{
+margin-top: 15px;
+text-align: left;
+position: relative;
+float:right;
+padding: 10px;
+width: 90%;
+background: #F5F5F5;
+border: #E3E3E3 solid 1px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+color: #45515f;
+}
+
+.sent:after 
+{
+content: "";
+position: absolute;
+bottom: 10%;
+right: -7px;
+border-style: solid;
+border-width: 8px 0 8px 7px;
+border-color: transparent #F5F5F5;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.sent:before 
+{
+content: "";
+position: absolute;
+bottom: 10%;
+right: -8px;
+border-style: solid;
+border-width: 8px 0 8px 7px;
+border-color: transparent #E3E3E3;
+display: block;
+width: 0;
+z-index: 0;
+}

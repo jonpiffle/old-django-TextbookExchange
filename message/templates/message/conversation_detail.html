@@ -1,0 +1,32 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Messages |{%endblock%} 
+
+{% block page_content %}
+<h2>Messages: </h2>		
+<div class="block">
+	<div class="centered">
+		{% for message in conversation.messages.all%}
+		{% if message.sender == request.user.person %}
+			<div class="sent">
+				<div style='border-bottom: 1px solid #e0e0dc;'>
+		{% else %}
+			<div class="received">
+				<div style='border-bottom: 1px solid #2a333c;'>
+		{% endif %}
+		
+				{{ message.sender }}</div><br>
+				{{ message.content }}
+			</div>
+		{% empty %}
+		{% endfor %}
+			
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<hr>
+{% include "message/message_form.html" %}
+
+{% endblock page_content %}
+	

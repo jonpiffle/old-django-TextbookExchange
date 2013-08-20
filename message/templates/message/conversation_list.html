@@ -1,0 +1,33 @@
+{%extends "_layouts/base.html" %}
+
+{% block page_title %}Conversations |{%endblock%} 
+
+{% block page_content %}
+<h2>Conversations: </h2>
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<th>Conversation</th>
+		<th>Preview</th>
+		<th>Last Message:</th>
+	</thead>
+	<tbody>
+		{% for conversation in conversation_list%}
+			{% if conversation.other != None%}
+				{% if conversation.unread%}
+				<tr style="font-weight:bold;">
+				{%else%}
+				<tr>
+				{%endif%}
+					<td><a href="{% url 'message:conversation_detail' conversation.pk %}">{{ conversation.other }}</a></td>
+					<td><a href="{% url 'message:conversation_detail' conversation.pk %}">{{ conversation.most_recent }}</a></td>
+					<td><a href="{% url 'message:conversation_detail' conversation.pk %}">{{ conversation.updated_at }}</a></td>
+				</tr>
+			{% endif %}
+		{% empty %}
+			<td colspan=3>No conversations!</td>		
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock page_content %}
+	
